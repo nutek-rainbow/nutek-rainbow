@@ -80,6 +80,8 @@ Repositories are kept in private space and accesible over  [Github PAT](https://
 They are accesible over private Git-path: 
 
 git clone https://ghp_XXXXXXXXX---PAT---XXXXXXXXXX@github.com/nutek-rainbow/scanner.git
+git config --global user.email "XXX@gmail.com"
+git config --global user.name "XX YY"
 
 ### 3.1) scanner ###
 
