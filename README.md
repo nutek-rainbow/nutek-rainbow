@@ -1,10 +1,77 @@
 
-# RainbowProbe repository #
+# RainbowProbe project #
 
-## *) Description ##
+## 1) Description ##
 
-Nutek RainbowProbe development, using C++, cmake on Arm MX8M.
+Nutek RainbowProbe cancer scanner on Arm MX8M platform
 
+### 1.2) Profile ###
+
+Company description: [Nutek](https://nutekmedtech.com/ "Nutek")
+
+![Alt text](doc/screenshots/NutekBig.png?raw=true "Nutek")
+
+### 1.3) Location ###
+
+We are hosted at technological center ZWT in Graz, Austria [ZWT](https://www.zwt-graz.at/ "ZWT") 
+
+![Alt text](doc/screenshots/ZWT.png?raw=true "ZWT")
+
+Managed by team: [ZWT](https://www.humantechnology.at/team/ "ZWT-team") 
+
+
+## 2) Concept ##
+
+The main goal is to get high-tech (and look&feel) product at lowest runtime retail price.
+
+The concept is proven “factory automation” way (Soft PLC), where the solution consists of two main components:
+
+### 2.1) Scanner ###
+
+![Alt text](doc/screenshots/VideoProcessingRealtime.png?raw=true "Scanner")
+
+Realtime Data acquisition and digital analysis :
+ * Linux on MX8M board 
+ * Realtime service C++ process processing image data, dedicated to 1 core
+ * Internal threads taking care about capturing image frames, storing, sorting
+ * Each incoming frame gets assigned one thread to make pre-analysis
+ * Integration thread tries to make whole picture by merging incoming frames
+ 
+![Alt text](doc/screenshots/CaptureMx8mini.png?raw=true "MX8M")
+ 
+### 2.2) Panel ###
+
+![Alt text](doc/screenshots/VideoProcessingNodeJs.png?raw=true "Panel")
+
+Basically , it should be possible to capture the FrameBuffer on MX8 mini and send it to Bluetooth Screen.
+As cheap solution is also classic solution of “any” tablet (starting at 75eur), connected over Bluetooth or WiFi.
+This could also be any laptop or standalone PC.
+Main goal should be spreading the CPU/GPU load over more tasks (cores, chips) in order to get balanced
+system , which wouldn’t produce too much concentrated heat and be able to cool it very simply
+At the end comes GUI implemented by JavaScript module, offering wide range of stylistic platforms
+
+#### 2.2.1) WebExplorer (node.js) #### 
+
+Independent GUI Presentation on Touchpanel (bluetooth raw GUI or blutooth WebBrowser)
+ * Node.js web engine with C++ AddOn extensions for dedicated Image handling
+ * JavaScript UI for dynamic modern user interface
+ * Direct FrameBuffer output or standalone WebBrowser
+
+![Alt text](doc/screenshots/CaptureAmazon7.png?raw=true "Tablet")
+
+![Alt text](doc/screenshots/NodeJs.png?raw=true "NodeJs")
+
+![Alt text](doc/screenshots/NodeJsAddOnCpp.png?raw=true "NodeJsC++")
+
+#### 2.2.2) JavaScript GUI Interface  ####
+
+![Alt text](doc/screenshots/UI-JS.png?raw=true "UI-JS")
+
+![Alt text](doc/screenshots/UI-JS2.png?raw=true "UI-JS")
+
+![Alt text](doc/screenshots/UI-JS9.png?raw=true "UI-JS")
+
+## 3) Software Development ##
 
 git clone https://github.com/nutek-rainbow/RainbowProbe.git
 
@@ -13,7 +80,7 @@ Nutek platform is explained on web page:
 
 [MX8M](https://www.variscite.com/product/system-on-module-som/cortex-a53-krait/dart-mx8m-nxp-imx-8m/ "MX8M")
 
-## 1) Prerequisits  ##
+## 2) Prerequisits  ##
 To build platform, following tools have to be pre-installed:
 
 ### 1.1) Visual Studio Community 2022 ###
